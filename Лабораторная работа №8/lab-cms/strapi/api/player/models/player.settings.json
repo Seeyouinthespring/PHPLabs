@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "players",
+  "info": {
+    "name": "Player"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "private": false
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "play_number": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 99
+    },
+    "birthdate": {
+      "type": "date",
+      "required": true
+    },
+    "height": {
+      "type": "decimal",
+      "required": false
+    },
+    "weight": {
+      "type": "decimal"
+    },
+    "team": {
+      "columnName": "team",
+      "model": "team",
+      "via": "players"
+    }
+  }
+}
