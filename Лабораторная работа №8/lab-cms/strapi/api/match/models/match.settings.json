@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matches",
+  "info": {
+    "name": "Match"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "time",
+      "required": true
+    },
+    "ended": {
+      "type": "boolean"
+    },
+    "partisipants": {
+      "collection": "team",
+      "via": "matches",
+      "dominant": true
+    },
+    "result": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 5,
+      "required": true
+    }
+  }
+}

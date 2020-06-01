@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "name": "Team"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "city": {
+      "type": "string"
+    },
+    "foundation": {
+      "type": "date",
+      "required": true
+    },
+    "arena_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "players": {
+      "via": "team",
+      "collection": "player"
+    },
+    "matches": {
+      "via": "partisipants",
+      "collection": "match"
+    }
+  }
+}
